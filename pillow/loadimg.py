@@ -18,5 +18,8 @@ def FuzzerRunOne(FuzzerInput):
     p = ImageFile.Parser()
     try:
         p.feed(FuzzerInput)
+	im = p.close()
+	im.load()
+	im.close()
     except:
         pass
