@@ -5,7 +5,7 @@ CXXFLAGS += $(shell $(PYTHON_CONFIG_PATH) --cflags)
 LDFLAGS += -rdynamic $(shell $(PYTHON_CONFIG_PATH) --ldflags --embed)
 
 fuzzer-loadimg:
-	clang++ $(CXXFLAGS) $(LIB_FUZZING_ENGINE) -std=c++17 fuzzer.cpp -DPYTHON_HARNESS_PATH="\"loadimg.py\"" -ldl $(LDFLAGS) -o fuzzer-loadimg
+        clang++ $(CXXFLAGS) $(LIB_FUZZING_ENGINE) -std=c++17 fuzzer.cpp -DPYTHON_HARNESS_PATH="\"loadimg.py\"" -ldl $(LDFLAGS) -o fuzzer-loadimg
 
 fuzzer-load_fli:
         clang++ $(CXXFLAGS) $(LIB_FUZZING_ENGINE) -std=c++17 fuzzer.cpp -DPYTHON_HARNESS_PATH="\"load_fli.py\"" -ldl $(LDFLAGS) -o fuzzer-load_fli
