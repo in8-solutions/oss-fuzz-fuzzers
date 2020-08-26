@@ -11,6 +11,8 @@ copyfile(os.path.dirname(sys.executable) + '/libwebpdemux.so.1', '/usr/lib/x86_6
 
 sys.path.append(os.path.join(os.path.dirname(sys.path[-1]), 'pillow/src/'))
 warnings.simplefilter("ignore")
+import PIL 
+PIL._plugins.remove("PcxImagePlugin")
 
 from PIL import Image, ImageFile, WebPImagePlugin
 
